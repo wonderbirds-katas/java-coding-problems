@@ -41,4 +41,18 @@ class Ex12IsomorphicTextBlocksTest {
     String second = "abc";
     assertThat(IsomorphicTexts.areIsomorphic(first, second), is(false));
   }
+
+  @Test
+  void repeatedCharacterMismatchNotIsomorphic() {
+    String first = "esse";
+    String second = "esst";
+    assertThat(IsomorphicTexts.areIsomorphic(first, second), is(false));
+  }
+
+  @Test
+  void malenAndBadenAreIsomorphic() {
+    String first = "malen";
+    String second = "baden";
+    assertThat(IsomorphicTexts.areIsomorphic(first, second), is(true));
+  }
 }
