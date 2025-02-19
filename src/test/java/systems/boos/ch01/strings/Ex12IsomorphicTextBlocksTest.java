@@ -3,7 +3,6 @@ package systems.boos.ch01.strings;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 class Ex12IsomorphicTextBlocksTest {
@@ -30,10 +29,16 @@ class Ex12IsomorphicTextBlocksTest {
   }
 
   @Test
-  @Disabled("This is the next step")
   void twoCharacterStringsAreNotIsomorphic() {
     String first = "ab";
     String second = "aa";
+    assertThat(IsomorphicTexts.areIsomorphic(first, second), is(false));
+  }
+
+  @Test
+  void stringsWithDifferentLengthsAreNotIsomorphic() {
+    String first = "ab";
+    String second = "abc";
     assertThat(IsomorphicTexts.areIsomorphic(first, second), is(false));
   }
 }
